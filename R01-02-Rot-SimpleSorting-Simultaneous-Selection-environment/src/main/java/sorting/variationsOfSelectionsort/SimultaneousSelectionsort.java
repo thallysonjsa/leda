@@ -1,6 +1,7 @@
 package sorting.variationsOfSelectionsort;
 
 import sorting.AbstractSorting;
+import util.Util;
 
 /**
  * This algorithm applies two selection sorts simultaneously. In a same
@@ -14,7 +15,23 @@ import sorting.AbstractSorting;
 public class SimultaneousSelectionsort<T extends Comparable<T>> extends
 		AbstractSorting<T> {
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		for (int i = leftIndex; i <= rightIndex; i++) {
+			int menor = i;
+			int maior = rightIndex;
+			int y = rightIndex;
+			
+			for (int j = i + 1; j <= rightIndex; j++) {
+				if (array[j].compareTo(array[menor]) < 0)
+					menor = j;
+			}
+			Util.swap(array, menor, i);
+			
+			for (int j = rightIndex ; j > 0; j--) {
+				if (array[j].compareTo(array[maior]) > 0)
+					maior = j;
+			}
+			Util.swap(array, maior, y);
+			y--;
+		}
 	}
 }
