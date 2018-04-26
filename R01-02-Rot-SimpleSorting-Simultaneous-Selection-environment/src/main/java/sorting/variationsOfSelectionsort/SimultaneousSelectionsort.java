@@ -15,23 +15,30 @@ import util.Util;
 public class SimultaneousSelectionsort<T extends Comparable<T>> extends
 		AbstractSorting<T> {
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		for (int i = leftIndex; i <= rightIndex; i++) {
-			int menor = i;
-			int maior = rightIndex;
-			int y = rightIndex;
+		if (leftIndex > rightIndex || leftIndex > 0 || rightIndex > array.length || array == null)
+			return;
+		int menor;
+		int maior;
+		
+		while (leftIndex < rightIndex) {
+			menor = leftIndex;
+			maior = rightIndex;
 			
-			for (int j = i + 1; j <= rightIndex; j++) {
-				if (array[j].compareTo(array[menor]) < 0)
-					menor = j;
+			for (int i = menor + 1; i <= rightIndex; i++) {
+				if (array[i].compareTo(array[menor]) < 0) {
+					menor = i;
+				}
 			}
-			Util.swap(array, menor, i);
+			Util.swap(array, menor, leftIndex);
 			
-			for (int j = rightIndex ; j > 0; j--) {
-				if (array[j].compareTo(array[maior]) > 0)
+			for (int j = maior; j >= leftIndex; j--) {
+				if (array[j].compareTo(array[maior]) > 0) {
 					maior = j;
+				}
 			}
-			Util.swap(array, maior, y);
-			y--;
+			Util.swap(array, maior, rightIndex);
+			leftIndex++;
+			rightIndex--;
 		}
 	}
 }
