@@ -12,33 +12,29 @@ import util.Util;
  * iteration does the same from index 1 to index N-2. And so on. The execution
  * continues until the array is completely ordered.
  */
-public class SimultaneousSelectionsort<T extends Comparable<T>> extends
-		AbstractSorting<T> {
-	public void sort(T[] array, int leftIndex, int rightIndex) {
-		if (leftIndex > rightIndex || leftIndex > 0 || rightIndex > array.length || array == null)
-			return;
-		int menor;
-		int maior;
-		
-		while (leftIndex < rightIndex) {
-			menor = leftIndex;
-			maior = rightIndex;
-			
-			for (int i = menor + 1; i <= rightIndex; i++) {
-				if (array[i].compareTo(array[menor]) < 0) {
-					menor = i;
-				}
-			}
-			Util.swap(array, menor, leftIndex);
-			
-			for (int j = maior; j >= leftIndex; j--) {
-				if (array[j].compareTo(array[maior]) > 0) {
-					maior = j;
-				}
-			}
-			Util.swap(array, maior, rightIndex);
-			leftIndex++;
-			rightIndex--;
-		}
-	}
+public class SimultaneousSelectionsort<T extends Comparable<T>> extends AbstractSorting<T> {
+   public void sort(T[] array, int leftIndex, int rightIndex) {
+      if (array != null && leftIndex < rightIndex && array.length > 0 && rightIndex < array.length && leftIndex >= 0) {
+
+         int iterador = rightIndex;
+
+         for (int i = leftIndex; i < rightIndex; i++) {
+            int menor = i;
+            for (int j = i + 1; j <= rightIndex; j++) {
+               if (array[j].compareTo(array[menor]) < 0)
+                  menor = j;
+            }
+            Util.swap(array, menor, i);
+
+            int maior = iterador;
+            for (int k = iterador; k >= leftIndex; k--) {
+               if (array[k].compareTo(array[maior]) > 0) {
+                  maior = k;
+               }
+            }
+            Util.swap(array, iterador, maior);
+            iterador--;
+         }
+      }
+   }
 }
