@@ -14,7 +14,8 @@ import util.Util;
  */
 public class SimultaneousSelectionsort<T extends Comparable<T>> extends AbstractSorting<T> {
    public void sort(T[] array, int leftIndex, int rightIndex) {
-      if (array != null && leftIndex < rightIndex && array.length > 0 && rightIndex < array.length && leftIndex >= 0) {
+      if (array != null && leftIndex < rightIndex && array.length > 0 
+    		 && rightIndex < array.length && leftIndex >= 0) {
 
          int iterador = rightIndex;
 
