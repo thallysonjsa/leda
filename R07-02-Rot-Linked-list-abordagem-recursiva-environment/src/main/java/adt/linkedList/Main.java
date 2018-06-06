@@ -7,7 +7,8 @@ public class Main {
 		dll.insert(1);
 		System.out.println(dll.size());
 		dll.insertFirst(3);
-		dll.size();
+		System.out.println(dll.size());
+		dll.insertFirst(4);
 		System.out.println(dll.size());
 //		System.out.println(dll.getData());
 //		System.out.println(dll.getNext().getData());

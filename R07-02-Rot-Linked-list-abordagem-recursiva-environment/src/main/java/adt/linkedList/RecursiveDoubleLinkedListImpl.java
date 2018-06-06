@@ -24,7 +24,9 @@ public class RecursiveDoubleLinkedListImpl<T> extends RecursiveSingleLinkedListI
 				this.setPrevious(new RecursiveDoubleLinkedListImpl<>());
 			} else {
 				RecursiveDoubleLinkedListImpl<T> newHead = new RecursiveDoubleLinkedListImpl<>(element, this, nil);
-				this.setPrevious(newHead);
+				RecursiveDoubleLinkedListImpl<T> aux = new RecursiveDoubleLinkedListImpl<T>(this.getData(), this.getNext(), newHead);
+				this.setData(element);
+				this.setNext(aux);
 			}
 		}
 	}
