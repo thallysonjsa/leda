@@ -24,7 +24,8 @@ public class RecursiveDoubleLinkedListImpl<T> extends RecursiveSingleLinkedListI
 				this.setPrevious(new RecursiveDoubleLinkedListImpl<>());
 			} else {
 				RecursiveDoubleLinkedListImpl<T> newHead = new RecursiveDoubleLinkedListImpl<>(element, this, nil);
-				RecursiveDoubleLinkedListImpl<T> aux = new RecursiveDoubleLinkedListImpl<T>(this.getData(), this.getNext(), newHead);
+				RecursiveDoubleLinkedListImpl<T> aux = new RecursiveDoubleLinkedListImpl<T>(this.getData(),
+						this.getNext(), newHead);
 				this.setData(element);
 				this.setNext(aux);
 			}
@@ -45,8 +46,14 @@ public class RecursiveDoubleLinkedListImpl<T> extends RecursiveSingleLinkedListI
 
 	@Override
 	public void removeLast() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (!this.isEmpty()) {
+			if (this.getNext().getData() == null) {
+				this.setData(null);
+				this.getPrevious().setNext(new RecursiveDoubleLinkedListImpl<>());
+			} else {
+				((RecursiveDoubleLinkedListImpl<T>) this.getNext()).removeLast();
+			}
+		}
 	}
 
 	@Override
@@ -66,16 +73,37 @@ public class RecursiveDoubleLinkedListImpl<T> extends RecursiveSingleLinkedListI
 			}
 		}
 	}
-	
+
 	@Override
 	public void remove(T element) {
 		if (element != null) {
 			if (!this.isEmpty()) {
 				if (this.getData().equals(element)) {
-					
+					RecursiveDoubleLinkedListImpl<T> previous = this.getPrevious();
+					RecursiveDoubleLinkedListImpl<T> next = (RecursiveDoubleLinkedListImpl<T>) this.getNext();
+					previous.setNext(next);
+					next.setPrevious(previous);
+				} else if (this.getPrevious().getData() == null) {
+					removeFirst();
+				} else if (this.equals(this.getLast())) {
+					removeLast();
+				} else {
+					this.getNext().remove(element);
 				}
 			}
 		}
+	}
+
+	public RecursiveDoubleLinkedListImpl<T> getLast() {
+		if (!this.isEmpty()) {
+			if (this.getNext().getData() == null && (this.getPrevious().getData() != null 
+					|| this.getPrevious().getData() == null)) {
+				return this;
+			} else {
+				return ((RecursiveDoubleLinkedListImpl<T>) this.getNext()).getLast();
+			}
+		}
+		return null;
 	}
 
 	public RecursiveDoubleLinkedListImpl<T> getPrevious() {

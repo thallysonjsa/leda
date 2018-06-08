@@ -7,3 +7,23 @@
   <level>FINE</level>
   <message>File 116211019-THALLYSON JOSE SILVA ALVES.zip was received. It was sent by THALLYSON JOSE SILVA ALVES from IP 150.165.42.124</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-12T16:42:20.605-0300</date>
+  <logger>THALLYSON JOSE SILVA ALVES</logger>
+  <level>FINE</level>
+  <message>File 116211019-THALLYSON JOSE SILVA ALVES.zip was received. It was sent by THALLYSON JOSE SILVA ALVES from IP 192.168.1.10</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-18T00:42:53.638-0300</date>
+  <logger>THALLYSON JOSE SILVA ALVES</logger>
+  <level>FINE</level>
+  <message>File 116211019-THALLYSON JOSE SILVA ALVES.zip was received. It was sent by THALLYSON JOSE SILVA ALVES from IP 192.168.1.10</message>
+</record>
