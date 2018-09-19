@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-06-07T14:25:21.860-0300</date>
+  <logger>THALLYSON JOSE SILVA ALVES</logger>
+  <level>FINE</level>
+  <message>File 116211019-THALLYSON JOSE SILVA ALVES.zip was received. It was sent by THALLYSON JOSE SILVA ALVES from IP 192.168.1.9</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-06-08T01:06:08.513-0300</date>
+  <logger>THALLYSON JOSE SILVA ALVES</logger>
+  <level>FINE</level>
+  <message>File 116211019-THALLYSON JOSE SILVA ALVES.zip was received. It was sent by THALLYSON JOSE SILVA ALVES from IP 192.168.1.11</message>
+</record>
