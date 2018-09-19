@@ -2,13 +2,13 @@ package adt.bst;
 
 public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 
-   protected BSTNode<T> root;
+	protected BSTNode<T> root;
 
-   public BSTImpl() {
-      root = new BSTNode<T>();
-   }
+	public BSTImpl() {
+		root = new BSTNode<T>();
+	}
 
-   public BSTNode<T> getRoot() {
+	public BSTNode<T> getRoot() {
 		return this.root;
 	}
 
@@ -260,22 +260,21 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 		return index;
 	}
 
-   /**
-    * This method is already implemented using recursion. You must understand
-    * how it work and use similar idea with the other methods.
-    */
-   @Override
-   public int size() {
-      return size(root);
-   }
+	/**
+	 * This method is already implemented using recursion. You must understand how
+	 * it work and use similar idea with the other methods.
+	 */
+	@Override
+	public int size() {
+		return size(root);
+	}
 
-   private int size(BSTNode<T> node) {
-      int result = 0;
-      // base case means doing nothing (return 0)
-      if (!node.isEmpty()) { // indusctive case
-         result = 1 + size((BSTNode<T>) node.getLeft()) + size((BSTNode<T>) node.getRight());
-      }
-      return result;
-   }
-
+	private int size(BSTNode<T> node) {
+		int result = 0;
+		// base case means doing nothing (return 0)
+		if (!node.isEmpty()) { // indusctive case
+			result = 1 + size((BSTNode<T>) node.getLeft()) + size((BSTNode<T>) node.getRight());
+		}
+		return result;
+	}
 }

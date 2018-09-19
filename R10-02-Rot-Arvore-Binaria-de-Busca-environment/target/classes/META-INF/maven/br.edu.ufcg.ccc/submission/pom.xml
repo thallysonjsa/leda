@@ -83,15 +83,9 @@
 						</goals>
 						<configuration>
 							<!-- insira sua matricula -->
-<<<<<<< HEAD
-							<matricula>116211019</matricula>
-							<!-- insira o ID correto da atividade e a turma -->
-							<roteiro>R10-02</roteiro>
-=======
 							<matricula>INSIRA SEU NUMERO DE MATRICULA</matricula>
 							<!-- insira o ID correto da atividade e a turma -->
 							<roteiro>R0X-0X</roteiro>
->>>>>>> f2d623770f776379016c4009ee33ec59362569d3
 							<!-- NÃO MODIFIQUE AS TAGS ABAIXO -->
 							<semestre>2018.1</semestre>
 							<url>http://150.165.85.29:81/submitAtividade</url>
